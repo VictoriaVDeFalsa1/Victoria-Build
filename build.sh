@@ -33,10 +33,6 @@ elif [ "$KVER" == "6.1" ]; then
   KERNEL_REPO="https://github.com/VictoriaVDeFalsa1/android_kernel_xiaomi_sm8635"
   ANYKERNEL_BRANCH="master"
   KERNEL_BRANCH="lineage-23.2"
-elif [ "$KVER" == "5.10" ]; then
-  KERNEL_REPO="https://github.com/MillenniumOSS/android_kernel_common_android12-5.10.git"
-  ANYKERNEL_BRANCH="master"
-  KERNEL_BRANCH="mahiru-6-snowdrop-release"
 fi
 DEFCONFIG_TO_MERGE=""
 GKI_RELEASES_REPO="https://github.com/VictoriaVDeFalsa1"
@@ -73,22 +69,7 @@ cd $KSRC
 LINUX_VERSION=$(make kernelversion)
 LINUX_VERSION_CODE=${LINUX_VERSION//./}
 DEFCONFIG_FILE=$(find ./arch/arm64/configs -name "$KERNEL_DEFCONFIG")
-
-# --- PATCH INFINIX GT 20 PRO CAM (GKI 5.10 ONLY) ---
-if [ "$KVER" == "5.10" ]; then
-  log "📸 Applying Infinix GT 20 Pro Camera Fix..."
-  curl -L "https://github.com/ramabondanp/android_kernel_common-5.10/commit/4fe04b60009e.patch" -o infinix_cam.patch
-  patch -p1 < infinix_cam.patch || log "Camera patch already embedded."
-  rm infinix_cam.patch
-fi
 # ----------------------------------------------------
-
-# --- PATCH 300HZ (INSTALLED AT THE BEGINNING) ---
-#log "Applying 300Hz patch..."
-#wget -qO Inject_300hz.sh https://raw.githubusercontent.com/Kingfinik98/gki-builder/refs/heads/6.x/inject_ksu/Inject_300hz.sh
-#bash Inject_300hz.sh
-#rm Inject_300hz.sh
-# --------------------------------------
 
 # --- ADD KSU INJECT SCRIPT ---
 log "Injecting custom KSU & SuSFS configs from GitHub..."
