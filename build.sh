@@ -273,6 +273,7 @@ if [ $(echo "$LINUX_VERSION_CODE" | head -c1) -eq 6 ]; then
   )
 else
   MAKE_ARGS=(
+    LTO=full
     LLVM=1
     LLVM_IAS=1
     ARCH=arm64
