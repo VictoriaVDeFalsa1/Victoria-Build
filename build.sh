@@ -14,7 +14,7 @@ KERNEL_NAME="VictoriaVDeKernel"
 USER="Victoria"
 HOST="ElSamueltoDeFoltaGH"
 TIMEZONE="Asia/Jakarta"
-ANYKERNEL_REPO="https://github.com/VictoriaVDeFalsa1/anykernel6.1"
+ANYKERNEL_REPO="https://github.com/Kingfinik98/AnyKernel3"
 
 # Fixed Logic: 5.10 & 6.1 use gki_defconfig, others use quartix_defconfig
 if [ "$KVER" == "5.10" ]; then
@@ -31,7 +31,7 @@ if [ "$KVER" == "6.6" ]; then
   KERNEL_BRANCH="android15-6.6-2025-01"
 elif [ "$KVER" == "6.1" ]; then
   KERNEL_REPO="https://github.com/VictoriaVDeFalsa1/android_kernel_xiaomi_sm8635"
-  ANYKERNEL_BRANCH="main"
+  ANYKERNEL_BRANCH="master"
   KERNEL_BRANCH="lineage-23.2"
 elif [ "$KVER" == "5.10" ]; then
   KERNEL_REPO="https://github.com/MillenniumOSS/android_kernel_common_android12-5.10.git"
