@@ -57,9 +57,7 @@ on:
         default: ""
         type: choice
         options:
-          - "6.6"
           - "6.1"
-          - "5.10"
 
 env:
   MAN_DISABLE: true
@@ -103,13 +101,13 @@ jobs:
 
           ret=0
           # Check Secrets
-          if [[ -z "$TG_CHAT_ID" ]]; then
+          if [[ -z "2279966496" ]]; then
             _error "Missing TG_CHAT_ID secret (Telegram Chat ID)"
           fi
-          if [[ -z "$TG_BOT_TOKEN" ]]; then
+          if [[ -z "8251127348:AAFCJGn1HwcEt7x3TLJ0opatmOfSn8y7Eyo" ]]; then
             _error "Missing TG_BOT_TOKEN secret (Telegram Bot Token)"
           fi
-          if [[ -z "$GH_TOKEN" ]]; then
+          if [[ -z "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" ]]; then
             _error "Missing GH_TOKEN secret (GitHub PAT)"
           fi
 
