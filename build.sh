@@ -30,9 +30,9 @@ if [ "$KVER" == "6.6" ]; then
   ANYKERNEL_BRANCH="master"
   KERNEL_BRANCH="android15-6.6-2025-01"
 elif [ "$KVER" == "6.1" ]; then
-  KERNEL_REPO="https://github.com/VictoriaVDeFalsa1/android_kernel_xiaomi_sm8635"
+  KERNEL_REPO="https://github.com/Peridot-Development/kernel_xiaomi_peridot"
   ANYKERNEL_BRANCH="main"
-  KERNEL_BRANCH="lineage-23.2"
+  KERNEL_BRANCH="peridot-u-oss"
 fi
 DEFCONFIG_TO_MERGE=""
 GKI_RELEASES_REPO="https://github.com/VictoriaVDeFalsa1/Victoria-Build"
